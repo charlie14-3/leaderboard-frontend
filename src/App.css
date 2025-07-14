@@ -1,0 +1,367 @@
+
+   /*  GLOBAL CONTAINER & ELEMENT STYLES */
+
+
+.container {
+  max-width: 37.5rem;
+  margin: 2.5rem auto;
+  padding: 1.25rem;
+  background: white;
+  border-radius: 0.5rem;
+  box-shadow: 0 0.125rem 0.625rem rgba(0,0,0,0.1);
+}
+
+h1 {
+  text-align: center;
+  color: #333;
+}
+
+select, input, button {
+  padding: 0.625rem;
+  margin-top: 0.625rem;
+  font-size: 1rem;
+}
+
+select, input {
+  width: 100%;
+  margin-bottom: 0.625rem;
+}
+
+button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+.message {
+  color: green;
+  font-weight: bold;
+  margin-top: 0.625rem;
+  text-align: center;
+}
+
+
+/* 
+    DROPDOWN SECTIONS (Claim/Add)
+ */
+
+.dropdown-section {
+  background: #fff;
+  border-radius: 0.5rem;
+  box-shadow: 0 0.125rem 0.5rem rgba(0,0,0,0.08);
+  margin-top: 1.25rem;
+  overflow: hidden;
+}
+
+.dropdown-header {
+  padding: 0.75rem 1rem;
+  font-weight: bold;
+  background-color: #f6f6f6;
+  cursor: pointer;
+  border-bottom: 1px solid #ddd;
+}
+
+.dropdown-body {
+  padding: 1rem;
+  display: none;
+}
+
+.dropdown-body.active {
+  display: block;
+}
+
+
+/* FORMS (Add User / Claim Points)
+*/
+
+.form-section {
+  background: #fff;
+  padding: 1.25rem;
+  border-radius: 0.625rem;
+  margin-top: 1.875rem;
+  box-shadow: 0 0.25rem 0.75rem rgba(0,0,0,0.05);
+}
+
+label {
+  font-weight: bold;
+  margin-bottom: 0.625rem;
+  display: block;
+  color: #333;
+}
+
+.user-select,
+.add-user-input {
+  width: 100%;
+  padding: 0.625rem;
+  margin-top: 0.5rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.claim-btn,
+.add-user-btn {
+  padding: 0.625rem 1.25rem;
+  background-color: #ff9800;
+  color: #fff;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+.claim-btn:hover,
+.add-user-btn:hover {
+  background-color: #f57c00;
+}
+
+.claim-message {
+  margin-top: 0.625rem;
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.125rem;
+  color: green;
+  animation: pop 0.3s ease-in-out;
+}
+
+@keyframes pop {
+  0% { transform: scale(0.8); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+
+/*  LEADERBOARD - PODIUM STYLE
+*/
+
+.leaderboard-container {
+  background: linear-gradient(to bottom, #ffe1a8, #ffcf9d);
+  border-radius: 0.625rem;
+  padding: 1.25rem;
+  margin-top: 1.875rem;
+  position: relative;
+}
+
+/* Trophy Background Image */
+.trophy-background img {
+  width: 11.25rem;
+  opacity: 0.8; /* was 0.25 — increase for more visibility */
+  position: absolute;
+  top: 0.3125rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 0;
+  pointer-events: none;
+}
+
+
+
+/* Top 3 Podium Layout */
+.podium {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 1.875rem;
+  margin-top: 7.5rem;
+  z-index: 1;
+  position: relative;
+}
+
+.podium-card {
+  text-align: center;
+  width: 6.25rem;
+  background: white;
+  border-radius: 0.75rem;
+  padding: 0.625rem;
+  box-shadow: 0 0.25rem 0.75rem rgba(0,0,0,0.1);
+  position: relative;
+}
+
+.podium-card.first {
+  margin-bottom: 1.875rem;
+  border: 0.125rem solid gold;
+}
+
+.podium-card img {
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+  border: 0.1875rem solid gold;
+  z-index: 2;
+}
+
+.podium-card .rank {
+  font-weight: bold;
+  font-size: 0.875rem;
+  margin-top: 0.3125rem;
+}
+
+.podium-card .name {
+  font-size: 0.875rem;
+  font-weight: bold;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.podium-card .points {
+  font-size: 0.8125rem;
+  color: #ff8c00;
+  margin-top: 0.1875rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25rem;
+}
+
+/* Crown Overlay for 1st */
+.crown-overlay {
+  position: absolute;
+  top: -1.125rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
+  pointer-events: none;
+}
+
+.crown-overlay img {
+  width: 1.75rem;
+  height: auto;
+}
+
+
+/* REMAINING USERS LIST
+*/
+
+.remaining {
+  background: white;
+  border-radius: 0.625rem;
+  padding: 0.625rem;
+  margin-top: 1.25rem;
+}
+
+.remaining-row {
+  display: flex;
+  align-items: center;
+  padding: 0.625rem;
+  border-bottom: 1px solid #ddd;
+}
+
+.remaining-row img {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  margin-right: 0.625rem;
+}
+
+.remaining-row .name {
+  flex: 1;
+  font-weight: bold;
+}
+
+.remaining-row .points {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-weight: bold;
+  font-size: 0.875rem;
+  color: #ff9800;
+}
+
+/*  Leaderboard Title Styling
+ */
+
+h1 {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 1rem;
+  background: linear-gradient(to right, #f59e0b, #ef4444);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+
+/*  Claim Points Section
+ */
+
+.claim-section {
+  background-color: #fff7e6;
+  border-left: 0.5rem solid #ff9800;
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+  box-shadow: 0 0.25rem 0.75rem rgba(255, 152, 0, 0.2);
+  margin-top: 1.5rem;
+}
+
+.claim-btn {
+  width: 100%;
+  background-color: #ff9800;
+  border: none;
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  color: white;
+  font-weight: bold;
+  font-size: 1rem;
+  transition: background-color 0.3s;
+}
+
+.claim-btn:hover {
+  background-color: #f57c00;
+}
+
+
+/*  Add User Section
+*/
+
+.add-user-section {
+  background-color: #e0f7fa;
+  border-left: 0.5rem solid #00bcd4;
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+  box-shadow: 0 0.25rem 0.75rem rgba(0, 188, 212, 0.2);
+  margin-top: 1.5rem;
+}
+
+.add-user-btn {
+  width: 100%;
+  background-color: #00bcd4;
+  border: none;
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  color: white;
+  font-weight: bold;
+  font-size: 1rem;
+  transition: background-color 0.3s;
+}
+
+.add-user-btn:hover {
+  background-color: #0097a7;
+}
+
+.celebrate-overlay {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 0;
+  opacity: 0.25;
+  pointer-events: none;
+}
+
+.celebrate-overlay img {
+  width: 30rem;         /* ⬅️ Increase from 14rem to spread wider */
+  max-width: 100vw;
+  height: auto;
+}
+
+
+
